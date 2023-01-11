@@ -45,6 +45,7 @@
             this.lblBtcSold = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGetCurrentBtcPrice = new System.Windows.Forms.Button();
             this.nudBtcPrice = new System.Windows.Forms.NumericUpDown();
             this.nudEthPrice = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
@@ -92,12 +93,58 @@
             this.label10 = new System.Windows.Forms.Label();
             this.nudCardOtherPercent = new System.Windows.Forms.NumericUpDown();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblProfitRaw = new System.Windows.Forms.Label();
-            this.lblProfitSell = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.lblProfitTotal = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.lblProfitSell = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lblProfitRaw = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblInMinusOut = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.lblInOther = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.lblTotalAdded = new System.Windows.Forms.Label();
+            this.lblFunding = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.lblReceivedCryptoCAD = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.lblTransferReceived = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lblTotalRemovedFromApp = new System.Windows.Forms.Label();
+            this.lblBoughtWithCard = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.lblCashout = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.lblSentCryptoCAD = new System.Windows.Forms.Label();
+            this.lblTransferSend = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.btnGetCurrentEth = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.BTC.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -108,6 +155,11 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCardOtherPercent)).BeginInit();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTransactions
@@ -171,7 +223,7 @@
             this.BTC.Controls.Add(this.lblBtcBoughtInCad);
             this.BTC.Controls.Add(this.label1);
             this.BTC.Controls.Add(this.label3);
-            this.BTC.Location = new System.Drawing.Point(471, 84);
+            this.BTC.Location = new System.Drawing.Point(471, 12);
             this.BTC.Name = "BTC";
             this.BTC.Size = new System.Drawing.Size(258, 135);
             this.BTC.TabIndex = 5;
@@ -272,16 +324,28 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnGetCurrentEth);
+            this.groupBox1.Controls.Add(this.btnGetCurrentBtcPrice);
             this.groupBox1.Controls.Add(this.nudBtcPrice);
             this.groupBox1.Controls.Add(this.nudEthPrice);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(471, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 391);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(258, 66);
+            this.groupBox1.Size = new System.Drawing.Size(436, 66);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Price Estimations";
+            // 
+            // btnGetCurrentBtcPrice
+            // 
+            this.btnGetCurrentBtcPrice.Location = new System.Drawing.Point(258, 22);
+            this.btnGetCurrentBtcPrice.Name = "btnGetCurrentBtcPrice";
+            this.btnGetCurrentBtcPrice.Size = new System.Drawing.Size(79, 33);
+            this.btnGetCurrentBtcPrice.TabIndex = 18;
+            this.btnGetCurrentBtcPrice.Text = "Current BTC";
+            this.btnGetCurrentBtcPrice.UseVisualStyleBackColor = true;
+            this.btnGetCurrentBtcPrice.Click += new System.EventHandler(this.btnGetCurrentBtcPrice_Click);
             // 
             // nudBtcPrice
             // 
@@ -325,7 +389,7 @@
             this.nudEthPrice.Size = new System.Drawing.Size(120, 23);
             this.nudEthPrice.TabIndex = 16;
             this.nudEthPrice.Value = new decimal(new int[] {
-            3500,
+            1800,
             0,
             0,
             0});
@@ -365,7 +429,7 @@
             this.groupBox2.Controls.Add(this.lblEthBoughtInCad);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Location = new System.Drawing.Point(471, 225);
+            this.groupBox2.Location = new System.Drawing.Point(471, 153);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(258, 135);
             this.groupBox2.TabIndex = 15;
@@ -513,7 +577,7 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.lblSatsCount);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Location = new System.Drawing.Point(12, 382);
+            this.groupBox3.Location = new System.Drawing.Point(744, 121);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(258, 103);
             this.groupBox3.TabIndex = 16;
@@ -637,7 +701,7 @@
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.nudCardOtherPercent);
-            this.groupBox4.Location = new System.Drawing.Point(276, 382);
+            this.groupBox4.Location = new System.Drawing.Point(744, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(256, 103);
             this.groupBox4.TabIndex = 17;
@@ -795,50 +859,12 @@
             this.groupBox5.Controls.Add(this.label31);
             this.groupBox5.Controls.Add(this.lblProfitRaw);
             this.groupBox5.Controls.Add(this.label24);
-            this.groupBox5.Location = new System.Drawing.Point(538, 366);
+            this.groupBox5.Location = new System.Drawing.Point(471, 294);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 119);
+            this.groupBox5.Size = new System.Drawing.Size(258, 82);
             this.groupBox5.TabIndex = 18;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Final";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 19);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(89, 15);
-            this.label24.TabIndex = 39;
-            this.label24.Text = "Trade raw profit";
-            // 
-            // lblProfitRaw
-            // 
-            this.lblProfitRaw.AutoSize = true;
-            this.lblProfitRaw.BackColor = System.Drawing.Color.Green;
-            this.lblProfitRaw.Location = new System.Drawing.Point(101, 19);
-            this.lblProfitRaw.Name = "lblProfitRaw";
-            this.lblProfitRaw.Size = new System.Drawing.Size(34, 15);
-            this.lblProfitRaw.TabIndex = 40;
-            this.lblProfitRaw.Text = "xx.xx";
-            // 
-            // lblProfitSell
-            // 
-            this.lblProfitSell.AutoSize = true;
-            this.lblProfitSell.BackColor = System.Drawing.Color.Green;
-            this.lblProfitSell.Location = new System.Drawing.Point(101, 34);
-            this.lblProfitSell.Name = "lblProfitSell";
-            this.lblProfitSell.Size = new System.Drawing.Size(34, 15);
-            this.lblProfitSell.TabIndex = 42;
-            this.lblProfitSell.Text = "xx.xx";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 34);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(87, 15);
-            this.label31.TabIndex = 41;
-            this.label31.Text = "Trade sell profit";
             // 
             // lblProfitTotal
             // 
@@ -859,9 +885,518 @@
             this.label32.TabIndex = 43;
             this.label32.Text = "Total sell profit";
             // 
+            // lblProfitSell
+            // 
+            this.lblProfitSell.AutoSize = true;
+            this.lblProfitSell.BackColor = System.Drawing.Color.Green;
+            this.lblProfitSell.Location = new System.Drawing.Point(101, 34);
+            this.lblProfitSell.Name = "lblProfitSell";
+            this.lblProfitSell.Size = new System.Drawing.Size(34, 15);
+            this.lblProfitSell.TabIndex = 42;
+            this.lblProfitSell.Text = "xx.xx";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 34);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(87, 15);
+            this.label31.TabIndex = 41;
+            this.label31.Text = "Trade sell profit";
+            // 
+            // lblProfitRaw
+            // 
+            this.lblProfitRaw.AutoSize = true;
+            this.lblProfitRaw.BackColor = System.Drawing.Color.Green;
+            this.lblProfitRaw.Location = new System.Drawing.Point(101, 19);
+            this.lblProfitRaw.Name = "lblProfitRaw";
+            this.lblProfitRaw.Size = new System.Drawing.Size(34, 15);
+            this.lblProfitRaw.TabIndex = 40;
+            this.lblProfitRaw.Text = "xx.xx";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 19);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(89, 15);
+            this.label24.TabIndex = 39;
+            this.label24.Text = "Trade raw profit";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label29);
+            this.groupBox6.Controls.Add(this.label33);
+            this.groupBox6.Controls.Add(this.label34);
+            this.groupBox6.Controls.Add(this.label37);
+            this.groupBox6.Controls.Add(this.label38);
+            this.groupBox6.Controls.Add(this.label41);
+            this.groupBox6.Controls.Add(this.label42);
+            this.groupBox6.Location = new System.Drawing.Point(744, 233);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(258, 73);
+            this.groupBox6.TabIndex = 27;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Shaking Squad";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(193, 34);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(41, 12);
+            this.label29.TabIndex = 26;
+            this.label29.Text = "(99 BTC)";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.SystemColors.Control;
+            this.label33.Location = new System.Drawing.Point(150, 49);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(37, 15);
+            this.label33.TabIndex = 24;
+            this.label33.Text = "xxxxx";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 49);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(127, 15);
+            this.label34.TabIndex = 23;
+            this.label34.Text = "Total Estimated in CAD";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(150, 34);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(37, 15);
+            this.label37.TabIndex = 20;
+            this.label37.Text = "xxxxx";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 34);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(80, 15);
+            this.label38.TabIndex = 19;
+            this.label38.Text = "Total Earnings";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(150, 19);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(19, 15);
+            this.label41.TabIndex = 16;
+            this.label41.Text = "69";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 19);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(79, 15);
+            this.label42.TabIndex = 15;
+            this.label42.Text = "Times Shaked";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label43);
+            this.groupBox7.Controls.Add(this.label44);
+            this.groupBox7.Controls.Add(this.label45);
+            this.groupBox7.Controls.Add(this.label46);
+            this.groupBox7.Controls.Add(this.label47);
+            this.groupBox7.Controls.Add(this.label48);
+            this.groupBox7.Controls.Add(this.label49);
+            this.groupBox7.Controls.Add(this.label50);
+            this.groupBox7.Controls.Add(this.label51);
+            this.groupBox7.Controls.Add(this.label52);
+            this.groupBox7.Controls.Add(this.label53);
+            this.groupBox7.Location = new System.Drawing.Point(744, 312);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(258, 103);
+            this.groupBox7.TabIndex = 28;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Bonus";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label43.Location = new System.Drawing.Point(193, 64);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(41, 12);
+            this.label43.TabIndex = 26;
+            this.label43.Text = "(99 BTC)";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.Color.Green;
+            this.label44.Location = new System.Drawing.Point(150, 79);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(37, 15);
+            this.label44.TabIndex = 24;
+            this.label44.Text = "xxxxx";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 79);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(127, 15);
+            this.label45.TabIndex = 23;
+            this.label45.Text = "Total Estimated in CAD";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(150, 49);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(37, 15);
+            this.label46.TabIndex = 22;
+            this.label46.Text = "xxxxx";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(6, 49);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(145, 15);
+            this.label47.TabIndex = 21;
+            this.label47.Text = "Average Estimated in CAD";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(150, 64);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(37, 15);
+            this.label48.TabIndex = 20;
+            this.label48.Text = "xxxxx";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(6, 64);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(80, 15);
+            this.label49.TabIndex = 19;
+            this.label49.Text = "Total Earnings";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(150, 34);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(52, 15);
+            this.label50.TabIndex = 18;
+            this.label50.Text = "x.xxxxxx";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(6, 34);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(98, 15);
+            this.label51.TabIndex = 17;
+            this.label51.Text = "Average Earnings";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(150, 19);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(19, 15);
+            this.label52.TabIndex = 16;
+            this.label52.Text = "69";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(6, 19);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(83, 15);
+            this.label53.TabIndex = 15;
+            this.label53.Text = "Shakepay Earn";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lblInMinusOut);
+            this.groupBox8.Controls.Add(this.groupBox10);
+            this.groupBox8.Controls.Add(this.label57);
+            this.groupBox8.Controls.Add(this.groupBox9);
+            this.groupBox8.Location = new System.Drawing.Point(1006, 12);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(258, 379);
+            this.groupBox8.TabIndex = 27;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Summary";
+            // 
+            // lblInMinusOut
+            // 
+            this.lblInMinusOut.AutoSize = true;
+            this.lblInMinusOut.BackColor = System.Drawing.SystemColors.Control;
+            this.lblInMinusOut.Location = new System.Drawing.Point(150, 255);
+            this.lblInMinusOut.Name = "lblInMinusOut";
+            this.lblInMinusOut.Size = new System.Drawing.Size(37, 15);
+            this.lblInMinusOut.TabIndex = 38;
+            this.lblInMinusOut.Text = "xxxxx";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.lblInOther);
+            this.groupBox10.Controls.Add(this.label59);
+            this.groupBox10.Controls.Add(this.lblTotalAdded);
+            this.groupBox10.Controls.Add(this.lblFunding);
+            this.groupBox10.Controls.Add(this.label55);
+            this.groupBox10.Controls.Add(this.label61);
+            this.groupBox10.Controls.Add(this.label70);
+            this.groupBox10.Controls.Add(this.lblReceivedCryptoCAD);
+            this.groupBox10.Controls.Add(this.label66);
+            this.groupBox10.Controls.Add(this.lblTransferReceived);
+            this.groupBox10.Location = new System.Drawing.Point(6, 22);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(246, 109);
+            this.groupBox10.TabIndex = 40;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Money Added To App";
+            // 
+            // lblInOther
+            // 
+            this.lblInOther.AutoSize = true;
+            this.lblInOther.BackColor = System.Drawing.SystemColors.Control;
+            this.lblInOther.Location = new System.Drawing.Point(154, 66);
+            this.lblInOther.Name = "lblInOther";
+            this.lblInOther.Size = new System.Drawing.Size(37, 15);
+            this.lblInOther.TabIndex = 40;
+            this.lblInOther.Text = "xxxxx";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(10, 66);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(37, 15);
+            this.label59.TabIndex = 39;
+            this.label59.Text = "Other";
+            // 
+            // lblTotalAdded
+            // 
+            this.lblTotalAdded.AutoSize = true;
+            this.lblTotalAdded.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTotalAdded.Location = new System.Drawing.Point(154, 81);
+            this.lblTotalAdded.Name = "lblTotalAdded";
+            this.lblTotalAdded.Size = new System.Drawing.Size(37, 15);
+            this.lblTotalAdded.TabIndex = 38;
+            this.lblTotalAdded.Text = "xxxxx";
+            // 
+            // lblFunding
+            // 
+            this.lblFunding.AutoSize = true;
+            this.lblFunding.BackColor = System.Drawing.SystemColors.Control;
+            this.lblFunding.Location = new System.Drawing.Point(154, 21);
+            this.lblFunding.Name = "lblFunding";
+            this.lblFunding.Size = new System.Drawing.Size(37, 15);
+            this.lblFunding.TabIndex = 24;
+            this.lblFunding.Text = "xxxxx";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(10, 81);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(70, 15);
+            this.label55.TabIndex = 37;
+            this.label55.Text = "Total Added";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(10, 21);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(51, 15);
+            this.label61.TabIndex = 23;
+            this.label61.Text = "Funding";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(10, 36);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(93, 15);
+            this.label70.TabIndex = 27;
+            this.label70.Text = "Received Crypto";
+            // 
+            // lblReceivedCryptoCAD
+            // 
+            this.lblReceivedCryptoCAD.AutoSize = true;
+            this.lblReceivedCryptoCAD.Location = new System.Drawing.Point(154, 36);
+            this.lblReceivedCryptoCAD.Name = "lblReceivedCryptoCAD";
+            this.lblReceivedCryptoCAD.Size = new System.Drawing.Size(37, 15);
+            this.lblReceivedCryptoCAD.TabIndex = 28;
+            this.lblReceivedCryptoCAD.Text = "xxxxx";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(10, 51);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(98, 15);
+            this.label66.TabIndex = 31;
+            this.label66.Text = "Transfer Received";
+            // 
+            // lblTransferReceived
+            // 
+            this.lblTransferReceived.AutoSize = true;
+            this.lblTransferReceived.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTransferReceived.Location = new System.Drawing.Point(154, 51);
+            this.lblTransferReceived.Name = "lblTransferReceived";
+            this.lblTransferReceived.Size = new System.Drawing.Size(37, 15);
+            this.lblTransferReceived.TabIndex = 32;
+            this.lblTransferReceived.Text = "xxxxx";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(6, 255);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(76, 15);
+            this.label57.TabIndex = 37;
+            this.label57.Text = "Total In - Out";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.lblTotalRemovedFromApp);
+            this.groupBox9.Controls.Add(this.lblBoughtWithCard);
+            this.groupBox9.Controls.Add(this.label56);
+            this.groupBox9.Controls.Add(this.label58);
+            this.groupBox9.Controls.Add(this.label60);
+            this.groupBox9.Controls.Add(this.lblCashout);
+            this.groupBox9.Controls.Add(this.label68);
+            this.groupBox9.Controls.Add(this.lblSentCryptoCAD);
+            this.groupBox9.Controls.Add(this.lblTransferSend);
+            this.groupBox9.Controls.Add(this.label78);
+            this.groupBox9.Location = new System.Drawing.Point(6, 137);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(246, 109);
+            this.groupBox9.TabIndex = 39;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Money Removed From App";
+            // 
+            // lblTotalRemovedFromApp
+            // 
+            this.lblTotalRemovedFromApp.AutoSize = true;
+            this.lblTotalRemovedFromApp.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTotalRemovedFromApp.Location = new System.Drawing.Point(150, 79);
+            this.lblTotalRemovedFromApp.Name = "lblTotalRemovedFromApp";
+            this.lblTotalRemovedFromApp.Size = new System.Drawing.Size(37, 15);
+            this.lblTotalRemovedFromApp.TabIndex = 36;
+            this.lblTotalRemovedFromApp.Text = "xxxxx";
+            // 
+            // lblBoughtWithCard
+            // 
+            this.lblBoughtWithCard.AutoSize = true;
+            this.lblBoughtWithCard.Location = new System.Drawing.Point(150, 64);
+            this.lblBoughtWithCard.Name = "lblBoughtWithCard";
+            this.lblBoughtWithCard.Size = new System.Drawing.Size(37, 15);
+            this.lblBoughtWithCard.TabIndex = 22;
+            this.lblBoughtWithCard.Text = "xxxxx";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(6, 79);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(85, 15);
+            this.label56.TabIndex = 35;
+            this.label56.Text = "Total Removed";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(6, 64);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(102, 15);
+            this.label58.TabIndex = 21;
+            this.label58.Text = "Bought With Card";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(6, 19);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(56, 15);
+            this.label60.TabIndex = 19;
+            this.label60.Text = "Cash Out";
+            // 
+            // lblCashout
+            // 
+            this.lblCashout.AutoSize = true;
+            this.lblCashout.Location = new System.Drawing.Point(150, 19);
+            this.lblCashout.Name = "lblCashout";
+            this.lblCashout.Size = new System.Drawing.Size(37, 15);
+            this.lblCashout.TabIndex = 20;
+            this.lblCashout.Text = "xxxxx";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(6, 34);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(72, 15);
+            this.label68.TabIndex = 29;
+            this.label68.Text = "Send Crypto";
+            // 
+            // lblSentCryptoCAD
+            // 
+            this.lblSentCryptoCAD.AutoSize = true;
+            this.lblSentCryptoCAD.Location = new System.Drawing.Point(150, 34);
+            this.lblSentCryptoCAD.Name = "lblSentCryptoCAD";
+            this.lblSentCryptoCAD.Size = new System.Drawing.Size(37, 15);
+            this.lblSentCryptoCAD.TabIndex = 30;
+            this.lblSentCryptoCAD.Text = "xxxxx";
+            // 
+            // lblTransferSend
+            // 
+            this.lblTransferSend.AutoSize = true;
+            this.lblTransferSend.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTransferSend.Location = new System.Drawing.Point(150, 49);
+            this.lblTransferSend.Name = "lblTransferSend";
+            this.lblTransferSend.Size = new System.Drawing.Size(37, 15);
+            this.lblTransferSend.TabIndex = 34;
+            this.lblTransferSend.Text = "xxxxx";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(6, 49);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(77, 15);
+            this.label78.TabIndex = 33;
+            this.label78.Text = "Transfer Send";
+            // 
+            // btnGetCurrentEth
+            // 
+            this.btnGetCurrentEth.Location = new System.Drawing.Point(343, 22);
+            this.btnGetCurrentEth.Name = "btnGetCurrentEth";
+            this.btnGetCurrentEth.Size = new System.Drawing.Size(79, 33);
+            this.btnGetCurrentEth.TabIndex = 19;
+            this.btnGetCurrentEth.Text = "Current ETH";
+            this.btnGetCurrentEth.UseVisualStyleBackColor = true;
+            this.btnGetCurrentEth.Click += new System.EventHandler(this.btnGetCurrentEth_Click);
+            // 
             // frmMain
             // 
-            this.ClientSize = new System.Drawing.Size(742, 496);
+            this.ClientSize = new System.Drawing.Size(1385, 496);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -887,6 +1422,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCardOtherPercent)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -964,5 +1509,52 @@
         private Label label31;
         private Label lblProfitRaw;
         private Label label24;
+        private GroupBox groupBox6;
+        private Label label29;
+        private Label label33;
+        private Label label34;
+        private Label label37;
+        private Label label38;
+        private Label label41;
+        private Label label42;
+        private GroupBox groupBox7;
+        private Label label43;
+        private Label label44;
+        private Label label45;
+        private Label label46;
+        private Label label47;
+        private Label label48;
+        private Label label49;
+        private Label label50;
+        private Label label51;
+        private Label label52;
+        private Label label53;
+        private GroupBox groupBox8;
+        private GroupBox groupBox10;
+        private Label lblFunding;
+        private Label label61;
+        private GroupBox groupBox9;
+        private Label lblTransferSend;
+        private Label label78;
+        private Label lblTransferReceived;
+        private Label label66;
+        private Label lblSentCryptoCAD;
+        private Label label68;
+        private Label lblReceivedCryptoCAD;
+        private Label label70;
+        private Label lblBoughtWithCard;
+        private Label label58;
+        private Label lblCashout;
+        private Label label60;
+        private Label lblTotalRemovedFromApp;
+        private Label label56;
+        private Label lblTotalAdded;
+        private Label label55;
+        private Label lblInMinusOut;
+        private Label label57;
+        private Label lblInOther;
+        private Label label59;
+        private Button btnGetCurrentBtcPrice;
+        private Button btnGetCurrentEth;
     }
 }

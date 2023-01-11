@@ -1,4 +1,9 @@
 using Microsoft.VisualBasic.FileIO;
+using System.Net;
+using System.Security.Policy;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Windows.Forms;
 
 namespace Crypto_Stats
 {
@@ -32,6 +37,9 @@ namespace Crypto_Stats
                 }
             }
             LoadStats();
+            nudBtcPrice.Value = GetBtcPrice();
+            nudEthPrice.Value = GetEthPrice();
+            UpdateStats();
         }
 
         private void LoadStats()
@@ -51,6 +59,14 @@ namespace Crypto_Stats
 
             double cardCashBack = 0;
             double cardTransactions = 0;
+
+            double funding = 0;
+            double cashout = 0;
+            double receivedCrypto = 0;
+            double sentCrypto = 0;
+            double receivedTransfer = 0;
+            double sentTransfer = 0;
+            double other = 0;
 
             foreach (DataGridViewRow row in dgvTransactions.Rows)
             {
@@ -88,7 +104,7 @@ namespace Crypto_Stats
                     {
                         double amountCredited = Convert.ToDouble(row.Cells[(int)rows.AmountCredited].Value.ToString().Replace(".", ","));
                         timesShaked++;
-                        satsEarnings += amountCredited*100000000;
+                        satsEarnings += amountCredited * 100000000;
                     }
                     else if (transactionType.Equals("card cashbacks"))
                     {
@@ -100,8 +116,63 @@ namespace Crypto_Stats
                         double amountDebited = Convert.ToDouble(row.Cells[(int)rows.AmountDebited].Value.ToString().Replace(".", ","));
                         cardTransactions += amountDebited;
                     }
+                    else if (transactionType.Equals("fiat funding"))
+                    {
+                        double amountFund = Convert.ToDouble(row.Cells[(int)rows.AmountCredited].Value.ToString().Replace(".", ","));
+                        funding += amountFund;
+                    }
+                    else if (transactionType.Equals("fiat cashout"))
+                    {
+                        double amountCashOut = Convert.ToDouble(row.Cells[(int)rows.AmountDebited].Value.ToString().Replace(".", ","));
+                        cashout += amountCashOut;
+                    }
+                    else if (transactionType.Equals("crypto cashout"))
+                    {
+                        double amountCashout = Convert.ToDouble(row.Cells[(int)rows.AmountDebited].Value.ToString().Replace(".", ","));
+                        double cryptoRate = Convert.ToDouble(row.Cells[(int)rows.SpotRate].Value.ToString().Replace(".", ","));
+                        sentCrypto += amountCashout * cryptoRate;
+                    }
+                    else if (transactionType.Equals("crypto funding"))
+                    {
+                        double amountFund = Convert.ToDouble(row.Cells[(int)rows.AmountCredited].Value.ToString().Replace(".", ","));
+                        double cryptoRate = Convert.ToDouble(row.Cells[(int)rows.SpotRate].Value.ToString().Replace(".", ","));
+                        receivedCrypto += amountFund * cryptoRate;
+                    }
+                    else if (transactionType.Equals("peer transfer"))
+                    {
+                        if (row.Cells[(int)rows.Direction].Value.ToString() == "credit")
+                        {
+                            double amountReceived = Convert.ToDouble(row.Cells[(int)rows.AmountCredited].Value.ToString().Replace(".", ","));
+                            receivedTransfer += amountReceived;
+                        }
+                        else
+                        {
+                            double amountSent = Convert.ToDouble(row.Cells[(int)rows.AmountDebited].Value.ToString().Replace(".", ","));
+                            sentTransfer += amountSent;
+                        }
+                    }
+                    else if (transactionType.Equals("other"))
+                    {
+                        double amountOther = Convert.ToDouble(row.Cells[(int)rows.AmountCredited].Value.ToString().Replace(".", ","));
+                        other += amountOther;
+                    }
                 }
             }
+
+            lblFunding.Text = Math.Round(funding, 2).ToString();
+            lblReceivedCryptoCAD.Text = Math.Round(receivedCrypto, 2).ToString();
+            lblTransferReceived.Text = Math.Round(receivedTransfer, 2).ToString();
+            lblInOther.Text = Math.Round(other, 2).ToString();
+            lblTotalAdded.Text = Math.Round(funding + receivedCrypto + receivedTransfer + other, 2).ToString();
+
+            lblCashout.Text = Math.Round(cashout, 2).ToString();
+            lblSentCryptoCAD.Text = Math.Round(sentCrypto, 2).ToString();
+            lblTransferSend.Text = Math.Round(sentTransfer, 2).ToString();
+            lblBoughtWithCard.Text = Math.Round(cardTransactions, 2).ToString();
+            lblTotalRemovedFromApp.Text = Math.Round(cashout + sentCrypto + sentTransfer + cardTransactions, 2).ToString();
+
+            lblInMinusOut.Text = Math.Round((funding + receivedCrypto + receivedTransfer + other) - (cashout + sentCrypto + sentTransfer + cardTransactions), 2).ToString();
+
             lblBtcBought.Text =  Math.Round(btcBought, 8).ToString();
             lblBtcBoughtInCad.Text =  Math.Round(btcBoughtInCad,2).ToString();
             lblBtcSold.Text =  Math.Round(btcSold, 8).ToString();
@@ -211,6 +282,29 @@ namespace Crypto_Stats
             }
         }
 
+        private decimal GetBtcPrice()
+        {
+            string uri = "https://api.coinbase.com/v2/prices/BTC-CAD/spot";
+
+            WebClient client = new WebClient();
+            client.UseDefaultCredentials = true;
+            string data = client.DownloadString(uri);
+            var jsonCrypto = JsonSerializer.Deserialize<Crypto>(data);
+            double result = Convert.ToDouble(jsonCrypto.data.amount.ToString().Replace(".", ","));
+            return Convert.ToDecimal(Math.Round(result, 2));
+        }
+
+        private decimal GetEthPrice()
+        {
+            string uri = "https://api.coinbase.com/v2/prices/ETH-CAD/spot";
+
+            WebClient client = new WebClient();
+            client.UseDefaultCredentials = true;
+            string data = client.DownloadString(uri);
+            var jsonCrypto = JsonSerializer.Deserialize<Crypto>(data);
+            double result = Convert.ToDouble(jsonCrypto.data.amount.ToString().Replace(".", ","));
+            return Convert.ToDecimal(Math.Round(result, 2));
+        }
         private void nudBtcPrice_ValueChanged(object sender, EventArgs e)
         {
             UpdateStats();
@@ -225,5 +319,26 @@ namespace Crypto_Stats
         {
             UpdateStats();
         }
+
+        private void btnGetCurrentBtcPrice_Click(object sender, EventArgs e)
+        {
+            nudBtcPrice.Value = GetBtcPrice();
+            UpdateStats();
+        }
+
+        private void btnGetCurrentEth_Click(object sender, EventArgs e)
+        {
+            nudEthPrice.Value = GetEthPrice();
+            UpdateStats();
+        }
+    }
+    public class Crypto
+    {
+        public Amount data { get; set; }
+
+    }
+    public class Amount
+    {
+        public string amount { get; set; }
     }
 }
